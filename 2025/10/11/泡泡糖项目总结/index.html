@@ -1,679 +1,417 @@
+
+
+
+
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
 
 
+<link rel="alternate" type="application/rss+xml" title="萌新成长记" href="https://yjh0717.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="萌新成长记" href="https://yjh0717.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="萌新成长记" href="https://yjh0717.github.io/feed.json" />
 
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <meta name="keywords" content="关键问题与解决办法" />
+
+
+<link rel="canonical" href="https://yjh0717.github.io/2025/10/11/%E6%B3%A1%E6%B3%A1%E7%B3%96%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">
 
 
 
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="关键问题与解决办法," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="泡泡糖项目总结关键问题与解决方法在 “消灭泡泡糖” 游戏的开发过程中，面对复杂的业务逻辑与交互场景，我遇到了多个技术难点，通过系统性分析与多方案验证，我逐一攻克了这些难点，最终形成了稳定可靠的解决方案，确保了项目的顺利完成，具体如下： 递归查找同色泡泡糖的死循环问题问题：在实现 “点击泡泡糖后自动查找所有同色相邻对象” 的核心功能时，最初采用的递归算法存在严重缺陷：当某一泡泡糖的上下左右均存在同色">
-<meta property="og:type" content="article">
-<meta property="og:title" content="泡泡糖项目总结">
-<meta property="og:url" content="https://yjh0717.github.io/2025/10/11/%E6%B3%A1%E6%B3%A1%E7%B3%96%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/index.html">
-<meta property="og:site_name" content="萌新成长记">
-<meta property="og:description" content="泡泡糖项目总结关键问题与解决方法在 “消灭泡泡糖” 游戏的开发过程中，面对复杂的业务逻辑与交互场景，我遇到了多个技术难点，通过系统性分析与多方案验证，我逐一攻克了这些难点，最终形成了稳定可靠的解决方案，确保了项目的顺利完成，具体如下： 递归查找同色泡泡糖的死循环问题问题：在实现 “点击泡泡糖后自动查找所有同色相邻对象” 的核心功能时，最初采用的递归算法存在严重缺陷：当某一泡泡糖的上下左右均存在同色">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-11T05:30:33.000Z">
-<meta property="article:modified_time" content="2025-10-11T08:24:06.944Z">
-<meta property="article:author" content="黄元佳">
-<meta property="article:tag" content="关键问题与解决办法">
-<meta name="twitter:card" content="summary">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://yjh0717.github.io/2025/10/11/泡泡糖项目总结/"/>
-
-
-
-
-
-  <title>泡泡糖项目总结 | 萌新成长记</title>
-  
-
-
-
-
-
-
-
-
+  <title>
+泡泡糖项目总结 |
+Yume Shoka = 萌新成长记 = 从hello world出发，去技术宇宙探索</title>
 <meta name="generator" content="Hexo 7.3.0"></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">萌新成长记</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
     </div>
-      
-        <p class="site-subtitle">从hello world出发，去技术宇宙探索</p>
-      
   </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">泡泡糖项目总结
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2025-10-11 13:30:33">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-10-11T13:30:33+08:00">2025-10-11</time>
+  </span>
 </div>
 
-<nav class="site-nav">
-  
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
     </ul>
-  
-
-  
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
 </nav>
 
-
-
- </div>
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
+        </ul>
+      </div>
     </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://yjh0717.github.io/2025/10/11/%E6%B3%A1%E6%B3%A1%E7%B3%96%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">
 
-  <div id="posts" class="posts-expand">
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="黄元佳">
+    <meta itemprop="description" content="从hello world出发，去技术宇宙探索, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="萌新成长记">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
     
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yjh0717.github.io/2025/10/11/%E6%B3%A1%E6%B3%A1%E7%B3%96%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="萌新成长记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">泡泡糖项目总结</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2025-10-11T13:30:33+08:00">
-                2025-10-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="泡泡糖项目总结"><a href="#泡泡糖项目总结" class="headerlink" title="泡泡糖项目总结"></a><strong>泡泡糖项目总结</strong></h1><h2 id="关键问题与解决方法"><a href="#关键问题与解决方法" class="headerlink" title="关键问题与解决方法"></a><strong>关键问题与解决方法</strong></h2><p>在 “消灭泡泡糖” 游戏的开发过程中，面对复杂的业务逻辑与交互场景，我遇到了多个技术难点，通过系统性分析与多方案验证，我逐一攻克了这些难点，最终形成了稳定可靠的解决方案，确保了项目的顺利完成，具体如下：</p>
+    <h1 id="泡泡糖项目总结"><a href="#泡泡糖项目总结" class="headerlink" title="泡泡糖项目总结"></a><strong>泡泡糖项目总结</strong></h1><h2 id="关键问题与解决方法"><a href="#关键问题与解决方法" class="headerlink" title="关键问题与解决方法"></a><strong>关键问题与解决方法</strong></h2><p>在 “消灭泡泡糖” 游戏的开发过程中，面对复杂的业务逻辑与交互场景，我遇到了多个技术难点，通过系统性分析与多方案验证，我逐一攻克了这些难点，最终形成了稳定可靠的解决方案，确保了项目的顺利完成，具体如下：</p>
 <h3 id="递归查找同色泡泡糖的死循环问题"><a href="#递归查找同色泡泡糖的死循环问题" class="headerlink" title="递归查找同色泡泡糖的死循环问题"></a><strong>递归查找同色泡泡糖的死循环问题</strong></h3><p>问题：在实现 “点击泡泡糖后自动查找所有同色相邻对象” 的核心功能时，最初采用的递归算法存在严重缺陷：当某一泡泡糖的上下左右均存在同色对象时，递归调用会在相邻泡泡糖之间往复遍历（例如 A→B→A→B…），导致栈内存溢出，程序崩溃。这一问题的本质是未对已访问的泡泡糖进行标记，使得同一对象被重复纳入递归流程。<br>解决：为解决这一问题，我们在 “待消除集合”（clearStars）中增加了存在性判断机制：在lookupByPath()递归方法中，每次查找相邻泡泡糖前，先通过clearStars.existed(star)判断该对象是否已加入集合。若已存在，则直接终止当前分支的递归；若不存在，则将其加入集合后继续递归。这一机制确保每个泡泡糖仅被处理一次，彻底避免了死循环，同时通过StarList类的existed()方法封装判断逻辑，使代码更具可读性与复用性。</p>
 <h3 id="继承时的构造器引用共享问题"><a href="#继承时的构造器引用共享问题" class="headerlink" title="继承时的构造器引用共享问题"></a><strong>继承时的构造器引用共享问题</strong></h3><p>问题：在设计MovedStar类（用于记录泡泡糖移动前后的位置）时，最初的实现直接将父类Star的Position对象传递给子类构造器，导致严重的数据耦合：当父类修改坐标信息时，子类的原始坐标也会同步变化，进而引发移动逻辑计算错误（如原位置与移动后位置混淆）。这一问题源于 Java 中对象引用的传递特性 —— 父子类共享同一Position对象的内存地址。<br>解决：为彻底隔离父子类的数据依赖，我们重构了MovedStar的构造器逻辑：在接收原始坐标参数后，不直接传递引用，而是通过new Position(row, col)创建全新的Position对象，再通过super()方法传递给父类。这一 “克隆式” 初始化确保父子类的坐标属性各自独立，即使父类位置发生变化，子类存储的原始位置也不会受到影响，为移动动画的精准执行提供了数据保障。同时，我们在StarsUtil工具类中封装了clone(Star source)方法，统一处理对象克隆逻辑，避免代码冗余。</p>
 <h3 id="多列泡泡糖移动的顺序与分组问题"><a href="#多列泡泡糖移动的顺序与分组问题" class="headerlink" title="多列泡泡糖移动的顺序与分组问题"></a><strong>多列泡泡糖移动的顺序与分组问题</strong></h3><p>问题：在实现 “多列泡泡糖同时移动” 功能时，最初的遍历逻辑存在顺序混乱问题：当多个列需要同时向下移动时，直接按行遍历会导致某一列的移动结果干扰其他列的计算（例如左侧列的泡泡糖下移后覆盖右侧列的未处理对象）；此外，水平移动时若不区分空列与非空列的处理顺序，会出现 “已移动列被重复计算” 的错误。<br>解决：针对这一问题，我们设计了 “先排序、后分组” 的双层处理机制：首先，通过StarsUtil.sort(clearStars)对 “待消除集合” 进行冒泡排序，排序规则为 “先按列升序、再按行升序”，确保从左到右、从下到上依次处理每一列的移动逻辑；其次，使用HashMap&lt;Integer, StarList&gt;数据结构，以列号为键、该列待移动泡泡糖为值进行分组，使每列的移动计算相互独立。在垂直移动中，每组内按 “从底部到顶部” 的顺序计算下移步长；在水平移动中，按 “从左到右” 的顺序处理非空列的左移逻辑。这一机制彻底解决了多列移动的干扰问题，确保移动动画的连贯性与数据一致性。</p>
 <h3 id="运行时配置文件读取失败（文件未找到）问题"><a href="#运行时配置文件读取失败（文件未找到）问题" class="headerlink" title="运行时配置文件读取失败（文件未找到）问题"></a><strong>运行时配置文件读取失败（文件未找到）问题</strong></h3><p>问题：启动时出现 “FileNotFoundException: score.conf (系统找不到指定的文件)” 错误，导致关卡目标分、积分规则等配置无法加载。经追踪发现，问题根源在于配置文件的路径引用方式存在缺陷。<br>解决：改用类加载器的getResourceAsStream()方法读取配置文件，类加载器的getResourceAsStream()方法会自动搜索 Java 的类路径（包括 JAR 包内部、src目录、classes目录等），无论配置文件是在开发环境的源码目录中，还是打包后位于 JAR 内部，只需传入资源的相对路径（如”score.conf”）即可定位，无需关心物理路径。</p>
 
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" rel="tag"># 关键问题与解决办法</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2025/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" rel="next" title="我的第一篇博客文章">
-                <i class="fa fa-chevron-left"></i> 我的第一篇博客文章
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2025/10/11/hello-world/" rel="prev" title="技术萌新阶段！我的 Hexo 博客 “打怪升级” 记录">
-                技术萌新阶段！我的 Hexo 博客 “打怪升级” 记录 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">tags</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A1%E6%B3%A1%E7%B3%96%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">泡泡糖项目总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">关键问题与解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E6%9F%A5%E6%89%BE%E5%90%8C%E8%89%B2%E6%B3%A1%E6%B3%A1%E7%B3%96%E7%9A%84%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.1.</span> <span class="nav-text">递归查找同色泡泡糖的死循环问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E6%97%B6%E7%9A%84%E6%9E%84%E9%80%A0%E5%99%A8%E5%BC%95%E7%94%A8%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.2.</span> <span class="nav-text">继承时的构造器引用共享问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%88%97%E6%B3%A1%E6%B3%A1%E7%B3%96%E7%A7%BB%E5%8A%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%88%86%E7%BB%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.3.</span> <span class="nav-text">多列泡泡糖移动的顺序与分组问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%A4%B1%E8%B4%A5%EF%BC%88%E6%96%87%E4%BB%B6%E6%9C%AA%E6%89%BE%E5%88%B0%EF%BC%89%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.4.</span> <span class="nav-text">运行时配置文件读取失败（文件未找到）问题</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
+      <div class="tags">
+          <a href="/tags/%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" rel="tag"><i class="ic i-tag"></i> 关键问题与解决办法</a>
       </div>
-    </main>
+  </div>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2025</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2025-10-11 16:24:06" itemprop="dateModified" datetime="2025-10-11T16:24:06+08:00">2025-10-11</time>
   </span>
-  <span class="author" itemprop="copyrightHolder">黄元佳</span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="黄元佳 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="黄元佳 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="黄元佳 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>黄元佳 <i class="ic i-at"><em>@</em></i>萌新成长记
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://yjh0717.github.io/2025/10/11/%E6%B3%A1%E6%B3%A1%E7%B3%96%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" title="泡泡糖项目总结">https://yjh0717.github.io/2025/10/11/泡泡糖项目总结/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj9410cj20zk0m8h12.jpg" title="我的第一篇博客文章">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>我的第一篇博客文章</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2025/10/11/hello-world/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclffsa1cj20zk0m811l.jpg" title="技术萌新阶段！我的 Hexo 博客 “打怪升级” 记录">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>技术萌新阶段！我的 Hexo 博客 “打怪升级” 记录</h3>
+  </a>
+
+    </div>
+</div>
 
   
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A1%E6%B3%A1%E7%B3%96%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">泡泡糖项目总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">关键问题与解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%9F%A5%E6%89%BE%E5%90%8C%E8%89%B2%E6%B3%A1%E6%B3%A1%E7%B3%96%E7%9A%84%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.1.</span> <span class="toc-text">递归查找同色泡泡糖的死循环问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E6%97%B6%E7%9A%84%E6%9E%84%E9%80%A0%E5%99%A8%E5%BC%95%E7%94%A8%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.2.</span> <span class="toc-text">继承时的构造器引用共享问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%88%97%E6%B3%A1%E6%B3%A1%E7%B3%96%E7%A7%BB%E5%8A%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%88%86%E7%BB%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.3.</span> <span class="toc-text">多列泡泡糖移动的顺序与分组问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%A4%B1%E8%B4%A5%EF%BC%88%E6%96%87%E4%BB%B6%E6%9C%AA%E6%89%BE%E5%88%B0%EF%BC%89%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.4.</span> <span class="toc-text">运行时配置文件读取失败（文件未找到）问题</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="黄元佳"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">黄元佳</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">3</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">2</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2025/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2025/10/11/hello-world/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
 
+    <span><a href="/2025/10/11/%E6%B3%A1%E6%B3%A1%E7%B3%96%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" title="泡泡糖项目总结">泡泡糖项目总结</a></span>
+  </li>
 
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
 
-  <span class="post-meta-divider">|</span>
+    <span><a href="/2025/10/11/hello-world/" title="技术萌新阶段！我的 Hexo 博客 “打怪升级” 记录">技术萌新阶段！我的 Hexo 博客 “打怪升级” 记录</a></span>
+  </li>
 
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
 
+    <span><a href="/2025/06/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" title="我的第一篇博客文章">我的第一篇博客文章</a></span>
+  </li>
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
 
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">黄元佳 @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
 
-
-
-        
-
-
-
-
-
-
-
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/10/11/泡泡糖项目总结/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
 </script>
 
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
 
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
 
+<script src="/js/app.js?v=0.2.5"></script>
 
 
 
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
